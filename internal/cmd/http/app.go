@@ -21,6 +21,7 @@ func main() {
 	// initialize router
 	r := mux.NewRouter()
 	r.HandleFunc("/ping", httpDelivery.Ping).Methods(http.MethodGet)
+	r.HandleFunc("/user/register", httpDelivery.RegisterUser).Methods(http.MethodPost)
 
 	log.Info("Starting the server...")
 	err := http.ListenAndServe("localhost:8000", r)
