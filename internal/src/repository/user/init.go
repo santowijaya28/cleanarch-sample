@@ -1,5 +1,9 @@
 package user
 
-func Init() *Repository {
-	return &Repository{}
+import "database/sql"
+
+func Init(userDB *sql.DB) *Repository {
+	return &Repository{
+		userdb: userDB,
+	}
 }
